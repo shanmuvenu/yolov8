@@ -48,8 +48,8 @@ Speed = Distance (in pixels) / Time (in seconds)
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/rahulmeganath/yolo-flask-app.git
-cd yolo-flask-app
+git clone https://github.com/shanmuvenu/yolov8.git
+cd yolov8
 ```
 
 ### 2. Create Virtual Environment
@@ -71,11 +71,11 @@ python app.py
 ### Run Using Docker
 ## 1. Build the Docker Image
 ```
-docker build -t yolo-flask-app .
+docker build -t yolov8 .
 ```
 ## 2. Run the Container
 ```
-docker run -p 5000:5000 yolo-flask-app
+docker run -p 5000:5000 yolov8
 ```
 
 ## Future Improvements
