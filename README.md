@@ -4,7 +4,7 @@ A real-time web-based surveillance system for **object detection**, **object tra
 
 ---
 ## 🎥 Sample Output Video
-[Watch the Demo video](https://drive.google.com/file/d/1fDaA2xdCKDzefGRvRBOLKf2GRG_XzYIu/view?usp=sharing)
+[Watch the Demo video](https://drive.google.com/file/d/1rBAcbCTP2MxI6rDfrW1L4k8loEhVPCE4/view?usp=sharing)
 
 ## 🎯 Features
 
