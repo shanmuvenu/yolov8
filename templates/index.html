@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YOLOv8 Object Counting</title>
+</head>
+<body>
+    <h1>Upload a Video for Processing</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="video" required>
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if video_path %}
+        <h2>Processed Stream</h2>
+        <img src="{{ url_for('video_feed', filename=video_path) }}" width="800">
+
+        <h3>Live Stats</h3>
+        <p><strong>Global Count:</strong> <span id="globalCount">0</span></p>
+        <p><strong>Region Count:</strong> <span id="regionCount">0</span></p>
+        <p><strong>Detected Classes:</strong> <span id="classList">None</span></p>
+
+        <script>
+            function updateStats() {
+                fetch('/stats')
+                    .then(res => res.json())
+                    .then(data => {
+                        document.getElementById('globalCount').textContent = data.global_count;
+                        document.getElementById('regionCount').textContent = data.region_count;
+                        document.getElementById('classList').textContent = data.classes.join(', ');
+                    });
+            }
+            setInterval(updateStats, 1000);  // Poll every 1 second
+        </script>
+    {% endif %}
+</body>
+</html>
